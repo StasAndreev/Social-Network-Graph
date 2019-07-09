@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40b62be6f9634bf282d9d503937e3466" Name="Diagram1">
+        <EntityTypeShape EntityType="socialModel.gender" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="socialModel.hobbie" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="socialModel.locality" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="socialModel.user" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="socialModel.FK_user_gender1" ManuallyRouted="false" />
+        <AssociationConnector Association="socialModel.FK_user_locality" ManuallyRouted="false" />
+        <AssociationConnector Association="socialModel.FK_user_locality1" ManuallyRouted="false" />
+        <AssociationConnector Association="socialModel.friendship" ManuallyRouted="false" />
+        <AssociationConnector Association="socialModel.interest" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

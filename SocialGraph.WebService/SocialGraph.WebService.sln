@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialGraph.WebService", "SocialGraph.WebService\SocialGraph.WebService.csproj", "{97F68B85-7AB8-47D8-B85D-17ECAB3C0CCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F68B85-7AB8-47D8-B85D-17ECAB3C0CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F68B85-7AB8-47D8-B85D-17ECAB3C0CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F68B85-7AB8-47D8-B85D-17ECAB3C0CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F68B85-7AB8-47D8-B85D-17ECAB3C0CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE7990ED-5992-47E1-8557-1D0AB6D6A577}
+	EndGlobalSection
+EndGlobal

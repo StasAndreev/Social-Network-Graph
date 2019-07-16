@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SocialModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="friendship">
+          <Key>
+            <PropertyRef Name="ID_User_A" />
+            <PropertyRef Name="ID_User_B" />
+          </Key>
+          <Property Name="ID_User_A" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ID_User_B" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="ID_Gender" />
+          </Key>
+          <Property Name="ID_Gender" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hobbie">
+          <Key>
+            <PropertyRef Name="ID_Hobbie" />
+          </Key>
+          <Property Name="ID_Hobbie" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="interest">
+          <Key>
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Hobbie" />
+          </Key>
+          <Property Name="ID_User" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ID_Hobbie" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="locality">
+          <Key>
+            <PropertyRef Name="ID_Locality" />
+          </Key>
+          <Property Name="ID_Locality" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="second_name" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="first_name" Type="nchar" MaxLength="25" Nullable="false" />
+          <Property Name="middle_name" Type="nchar" MaxLength="25" />
+          <Property Name="birthday" Type="date" Nullable="false" />
+          <Property Name="ID_Gender" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ID_Birthplace" Type="uniqueidentifier" />
+          <Property Name="ID_Residence" Type="uniqueidentifier" />
+          <Property Name="Phone" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_friendship_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="friendship" Type="Self.friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="friendship">
+              <PropertyRef Name="ID_User_A" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_friendship_user1">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="friendship" Type="Self.friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="friendship">
+              <PropertyRef Name="ID_User_B" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_interest_hobbie">
+          <End Role="hobbie" Type="Self.hobbie" Multiplicity="1" />
+          <End Role="interest" Type="Self.interest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hobbie">
+              <PropertyRef Name="ID_Hobbie" />
+            </Principal>
+            <Dependent Role="interest">
+              <PropertyRef Name="ID_Hobbie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_interest_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="interest" Type="Self.interest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="interest">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_gender1">
+          <End Role="gender" Type="Self.gender" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="ID_Gender" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_locality">
+          <End Role="locality" Type="Self.locality" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locality">
+              <PropertyRef Name="ID_Locality" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Birthplace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_locality1">
+          <End Role="locality" Type="Self.locality" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locality">
+              <PropertyRef Name="ID_Locality" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Residence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище SocialModelContainer">
+          <EntitySet Name="friendship" EntityType="Self.friendship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hobbie" EntityType="Self.hobbie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="interest" EntityType="Self.interest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="locality" EntityType="Self.locality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_friendship_user" Association="Self.FK_friendship_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="friendship" EntitySet="friendship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_friendship_user1" Association="Self.FK_friendship_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="friendship" EntitySet="friendship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_interest_hobbie" Association="Self.FK_interest_hobbie">
+            <End Role="hobbie" EntitySet="hobbie" />
+            <End Role="interest" EntitySet="interest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_interest_user" Association="Self.FK_interest_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="interest" EntitySet="interest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_gender1" Association="Self.FK_user_gender1">
+            <End Role="gender" EntitySet="gender" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_locality" Association="Self.FK_user_locality">
+            <End Role="locality" EntitySet="locality" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_locality1" Association="Self.FK_user_locality1">
+            <End Role="locality" EntitySet="locality" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SocialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="ID_Gender" />
+          </Key>
+          <Property Name="ID_Gender" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_gender1" FromRole="gender" ToRole="user" />
+        </EntityType>
+        <EntityType Name="hobbie">
+          <Key>
+            <PropertyRef Name="ID_Hobbie" />
+          </Key>
+          <Property Name="ID_Hobbie" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.interest" FromRole="hobbie" ToRole="user" />
+        </EntityType>
+        <EntityType Name="locality">
+          <Key>
+            <PropertyRef Name="ID_Locality" />
+          </Key>
+          <Property Name="ID_Locality" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_locality" FromRole="locality" ToRole="user" />
+          <NavigationProperty Name="user1" Relationship="Self.FK_user_locality1" FromRole="locality" ToRole="user" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Guid" Nullable="false" />
+          <Property Name="second_name" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="middle_name" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_Gender" Type="Guid" Nullable="false" />
+          <Property Name="ID_Birthplace" Type="Guid" />
+          <Property Name="ID_Residence" Type="Guid" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="gender" Relationship="Self.FK_user_gender1" FromRole="user" ToRole="gender" />
+          <NavigationProperty Name="locality" Relationship="Self.FK_user_locality" FromRole="user" ToRole="locality" />
+          <NavigationProperty Name="locality1" Relationship="Self.FK_user_locality1" FromRole="user" ToRole="locality" />
+          <NavigationProperty Name="user1" Relationship="Self.friendship" FromRole="user" ToRole="user1" />
+          <NavigationProperty Name="user2" Relationship="Self.friendship" FromRole="user1" ToRole="user" />
+          <NavigationProperty Name="hobbie" Relationship="Self.interest" FromRole="user" ToRole="hobbie" />
+        </EntityType>
+        <Association Name="FK_user_gender1">
+          <End Role="gender" Type="Self.gender" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gender">
+              <PropertyRef Name="ID_Gender" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_locality">
+          <End Role="locality" Type="Self.locality" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locality">
+              <PropertyRef Name="ID_Locality" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Birthplace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_locality1">
+          <End Role="locality" Type="Self.locality" Multiplicity="0..1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="locality">
+              <PropertyRef Name="ID_Locality" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="ID_Residence" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="friendship">
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <End Role="user1" Type="Self.user" Multiplicity="*" />
+        </Association>
+        <Association Name="interest">
+          <End Role="hobbie" Type="Self.hobbie" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SocialEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gender" EntityType="Self.gender" />
+          <EntitySet Name="hobbie" EntityType="Self.hobbie" />
+          <EntitySet Name="locality" EntityType="Self.locality" />
+          <EntitySet Name="user" EntityType="Self.user" />
+          <AssociationSet Name="FK_user_gender1" Association="Self.FK_user_gender1">
+            <End Role="gender" EntitySet="gender" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_locality" Association="Self.FK_user_locality">
+            <End Role="locality" EntitySet="locality" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_locality1" Association="Self.FK_user_locality1">
+            <End Role="locality" EntitySet="locality" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="friendship" Association="Self.friendship">
+            <End Role="user" EntitySet="user" />
+            <End Role="user1" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="interest" Association="Self.interest">
+            <End Role="hobbie" EntitySet="hobbie" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SocialModelContainer" CdmEntityContainer="SocialEntities">
+          <EntitySetMapping Name="gender">
+            <EntityTypeMapping TypeName="SocialModel.gender">
+              <MappingFragment StoreEntitySet="gender">
+                <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hobbie">
+            <EntityTypeMapping TypeName="SocialModel.hobbie">
+              <MappingFragment StoreEntitySet="hobbie">
+                <ScalarProperty Name="ID_Hobbie" ColumnName="ID_Hobbie" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="locality">
+            <EntityTypeMapping TypeName="SocialModel.locality">
+              <MappingFragment StoreEntitySet="locality">
+                <ScalarProperty Name="ID_Locality" ColumnName="ID_Locality" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="SocialModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="second_name" ColumnName="second_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+                <ScalarProperty Name="ID_Birthplace" ColumnName="ID_Birthplace" />
+                <ScalarProperty Name="ID_Residence" ColumnName="ID_Residence" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="friendship" TypeName="SocialModel.friendship" StoreEntitySet="friendship">
+            <EndProperty Name="user">
+              <ScalarProperty Name="ID_User" ColumnName="ID_User_A" />
+            </EndProperty>
+            <EndProperty Name="user1">
+              <ScalarProperty Name="ID_User" ColumnName="ID_User_B" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="interest" TypeName="SocialModel.interest" StoreEntitySet="interest">
+            <EndProperty Name="hobbie">
+              <ScalarProperty Name="ID_Hobbie" ColumnName="ID_Hobbie" />
+            </EndProperty>
+            <EndProperty Name="user">
+              <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

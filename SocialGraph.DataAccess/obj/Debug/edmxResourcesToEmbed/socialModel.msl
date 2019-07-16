@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SocialModelContainer" CdmEntityContainer="SocialEntities">
+    <EntitySetMapping Name="gender">
+      <EntityTypeMapping TypeName="SocialModel.gender">
+        <MappingFragment StoreEntitySet="gender">
+          <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hobbie">
+      <EntityTypeMapping TypeName="SocialModel.hobbie">
+        <MappingFragment StoreEntitySet="hobbie">
+          <ScalarProperty Name="ID_Hobbie" ColumnName="ID_Hobbie" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="locality">
+      <EntityTypeMapping TypeName="SocialModel.locality">
+        <MappingFragment StoreEntitySet="locality">
+          <ScalarProperty Name="ID_Locality" ColumnName="ID_Locality" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="SocialModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+          <ScalarProperty Name="second_name" ColumnName="second_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+          <ScalarProperty Name="ID_Birthplace" ColumnName="ID_Birthplace" />
+          <ScalarProperty Name="ID_Residence" ColumnName="ID_Residence" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="friendship" TypeName="SocialModel.friendship" StoreEntitySet="friendship">
+      <EndProperty Name="user">
+        <ScalarProperty Name="ID_User" ColumnName="ID_User_A" />
+      </EndProperty>
+      <EndProperty Name="user1">
+        <ScalarProperty Name="ID_User" ColumnName="ID_User_B" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="interest" TypeName="SocialModel.interest" StoreEntitySet="interest">
+      <EndProperty Name="hobbie">
+        <ScalarProperty Name="ID_Hobbie" ColumnName="ID_Hobbie" />
+      </EndProperty>
+      <EndProperty Name="user">
+        <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

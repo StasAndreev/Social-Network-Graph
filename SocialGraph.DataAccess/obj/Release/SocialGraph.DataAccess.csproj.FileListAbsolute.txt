@@ -1,0 +1,13 @@
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\SocialGraph.DataAccess.dll.config
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\SocialGraph.DataAccess.dll
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\SocialGraph.DataAccess.pdb
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\EntityFramework.dll
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\EntityFramework.xml
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\bin\Release\ru\EntityFramework.resources.dll
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\obj\Release\SocialGraph.DataAccess.csprojAssemblyReference.cache
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\obj\Release\SocialGraph.DataAccess.csproj.CoreCompileInputs.cache
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\obj\Release\SocialGraph.DataAccess.csproj.CopyComplete
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\obj\Release\SocialGraph.DataAccess.dll
+D:\Desktop\Граф социальной сети\SocialGraph.DataAccess\obj\Release\SocialGraph.DataAccess.pdb

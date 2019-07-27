@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -9,24 +8,40 @@ namespace WebService.Controllers
 {
     public class UserController : ApiController
     {
-        private DataBase DB = new DataBase();
-
         // GET: api/user
         public IEnumerable<UserSummary> GetUser()
         {
-            return DB.GetUserList();
+            List<UserSummary> Result = new List<UserSummary>();
+
+            using (SocialEntities DB = new SocialEntities())
+            {
+                DbSet<user> Users = DB.user;
+                foreach (user u in Users)
+                {
+                    Result.Add(new UserSummary(u, DB));
+                }
+            }
+
+            return Result;
         }
 
         // GET: api/user/5
         [ResponseType(typeof(UserFull))]
-        public IHttpActionResult GetUser(Guid ID)
+        public IHttpActionResult GetUser(System.Guid id)
         {
-            if (!DB.HasUser(ID))
+            UserFull Result;
+
+            using (SocialEntities DB = new SocialEntities())
             {
-                return NotFound();
+                user User = DB.user.Find(id);
+                if (User == null)
+                {
+                    return NotFound();
+                }
+                Result = new UserFull(User, DB);
             }
 
-            return Ok(DB.GetUserFull(ID));
+            return Ok(Result);
         }
 
         protected override void Dispose(bool disposing)

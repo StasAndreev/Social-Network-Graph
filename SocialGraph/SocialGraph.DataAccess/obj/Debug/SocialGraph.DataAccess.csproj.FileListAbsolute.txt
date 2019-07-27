@@ -24,16 +24,3 @@ D:\Coding\Граф социальной сети\!Проект\SocialGraph.DataA
 D:\Coding\Граф социальной сети\!Проект\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.csproj.CopyComplete
 D:\Coding\Граф социальной сети\!Проект\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.dll
 D:\Coding\Граф социальной сети\!Проект\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.pdb
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\SocialGraph.DataAccess.dll.config
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\SocialGraph.DataAccess.dll
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\SocialGraph.DataAccess.pdb
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\EntityFramework.dll
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\EntityFramework.xml
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\bin\Debug\ru\EntityFramework.resources.dll
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.csprojAssemblyReference.cache
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.csproj.CoreCompileInputs.cache
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.csproj.CopyComplete
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.dll
-D:\Coding\Граф социальной сети\git\SocialGraph\SocialGraph.DataAccess\obj\Debug\SocialGraph.DataAccess.pdb

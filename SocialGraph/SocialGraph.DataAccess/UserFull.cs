@@ -6,6 +6,11 @@ namespace SocialGraph.DataAccess
 {
     public class UserFull
     {
+        public UserFull()
+        {
+            Hobbies = new List<string>();
+            Friends = new List<System.Guid>();
+        }
         public UserFull(user u, SocialEntities db)
         {
             IdUser = u.ID_User;

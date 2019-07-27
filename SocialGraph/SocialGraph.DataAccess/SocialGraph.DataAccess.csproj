@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase.cs" />
     <Compile Include="gender.cs">
       <DependentUpon>SocialModel.tt</DependentUpon>
     </Compile>

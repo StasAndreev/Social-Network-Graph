@@ -6,6 +6,11 @@ namespace SocialGraph.DataAccess
 {
     public class UserSummary
     {
+        public UserSummary()
+        {
+            Friends = new List<System.Guid>();
+        }
+
         public UserSummary(user u, SocialEntities db)
         {
             IdUser = u.ID_User;

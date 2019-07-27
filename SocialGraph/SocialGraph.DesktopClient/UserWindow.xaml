@@ -1,0 +1,72 @@
+﻿<Window x:Class="SocialGraph.DesktopClient.UserWindow"
+        x:Name="root"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocialGraph.DesktopClient"
+        mc:Ignorable="d"
+        Title="User Window" Height="450" Width="413.75">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="26,20,0,0" TextWrapping="Wrap" 
+                   Text="First Name:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=FirstName}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,50,0,0" TextWrapping="Wrap" 
+                   Text="Midle Name:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,50,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=MiddleName}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,80,0,0" TextWrapping="Wrap" 
+                   Text="Second Name:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,80,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=SecondName}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,110,0,0" TextWrapping="Wrap" 
+                   Text="Gender:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,110,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Gender}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,140,0,0" TextWrapping="Wrap" 
+                   Text="Birthday:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,140,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Birthday}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,170,0,0" TextWrapping="Wrap" 
+                   Text="Birthplace:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,170,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Birthplace}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,200,0,0" TextWrapping="Wrap" 
+                   Text="Residence:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,200,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Residence}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,230,0,0" TextWrapping="Wrap" 
+                   Text="Phone:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,230,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Phone}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,260,0,0" TextWrapping="Wrap" 
+                   Text="Hobbies:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,260,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=Hobbies}"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="26,290,0,0" TextWrapping="Wrap" 
+                   Text="Friends' Ids:"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="120,290,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=root, Path=FriendsIds}"
+                   VerticalAlignment="Top" FontSize="14"/>
+    </Grid>
+</Window>
